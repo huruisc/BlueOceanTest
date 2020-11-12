@@ -2,7 +2,7 @@ pipeline{
 	agent any
 	
 	tools{
-		maven 'maven3.6.1'
+		maven 'maven3.6.3'
 	}
 	
 	triggers { 
@@ -12,7 +12,7 @@ pipeline{
 	stages{
 		stage('Test'){
 			steps{
-				sh 'mvn clean install'
+				sh '/home/maven/apache-maven-3.6.3/bin/mvn clean install'
 				junit 'target/surefire-reports/TEST-*.xml'
 			}
 		}
